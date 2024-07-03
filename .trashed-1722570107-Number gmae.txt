@@ -1,0 +1,37 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGame {
+    public static void main(String[]arg){
+    int answer ;
+    int guess;
+    final int Max=100;
+    Scanner sc= new Scanner(System.in);
+    Random random=new Random();
+    int trail=5;
+    boolean correct=false;
+    int i;
+    
+    answer=random.nextInt(Max)+1;
+    for( i=0;i<trail;i++) {
+        System.out.println("Guess a number between 1 and 100");
+        guess=sc.nextInt();
+        if(guess>answer){
+            System.out.println("to high. try again");
+        }
+        else if (guess<answer) {
+            System.out.println("too low.try again");
+        }
+        else{
+            System.out.println("yes.you guessed the number");
+            correct=true;
+        }
+    }
+    if ((i==trail)) {
+        System.out.println("you are exhausted your trail");
+        System.out.println("the numbrer was"+answer);
+    }
+    System.exit(0);
+    }
+    
+}
